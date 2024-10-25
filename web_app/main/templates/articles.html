@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style type="text/css">
+    body {
+      margin: 0 auto;
+      background-color: rgb(89, 94, 86);
+    }
+
+    #content-wrapper {
+      background: rgb(84, 236, 231);
+    }
+
+    .demo-block {
+      background-color: burlywood;
+    }
+    footer {
+      background-color: black;
+      color: white;
+    }
+
+    footer ul {
+      list-style-type: disc;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <div>
+    <h1 style="color: red;">Статьи будут тут</h1> <br>
+    <br>Тут будут все статьи
+    <div class="all-articles">
+      Тут будет одна стаья
+      <!-- Первая статья -->
+      <div>
+        <h2 class="example-h2">
+          <img src="/static/images/test_photo.png">
+          Название заголовока
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+      </div>
+      {# <!-- <div>
+        <h2 class="example-h2">
+          <img src="/static/images/test_photo.png">
+          {{articles[0].title}}
+        </h2>
+        <p>
+          {{articles[0].body}}
+        </p>
+      </div>
+      <div>
+        <h2 class="example-h2">
+          <img src="/static/images/test_photo.png">
+          {{articles[1].title}}
+        </h2>
+        <p>
+          {{articles[1].body}}
+        </p>
+      </div> --> #}
+      {% for article in articles %}
+      <div class="article-wrapper">
+        <h2 class="article-heading">
+          <img class="article-image" src="/static/images/test_photo.png">
+          {{article.title}}
+        </h2>
+        <p class="article-body">
+          {{article.body}}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <h2>Вторая статья: {{ second_article_text }}</h2>
+  <form action="/articles" method="POST">
+    <input type="text" placeholder="articles title" name="article_title">
+    <!-- <input type="file" accept="image/*"> -->
+    <textarea name="article_body" rows="5" cols="50"></textarea>
+    <input type="submit" value="Send">
+  </form>
+  <div class="demo-block">
+    <h3>{{ argument_X }}</h3>
+    <h3>{ argument_X }</h3>
+    <p>
+      Random number that was generated is {{ random_number_arg }}
+    </p>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="/">Home page</a></li>
+      <li><a href="/about">About US</a></li>
+      <li><a href="/articles">Articles</a></li>
+    </ul>
+  </footer>
+</body>
+
+</html>

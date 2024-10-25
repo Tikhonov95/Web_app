@@ -1,0 +1,25 @@
+img {
+    width: 100px;
+    height: 100px;
+    
+}
+
+.example-h2 {
+  margin: 50px;
+}
+
+.all-articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.article-wrapper{
+  background: rgb(145, 141, 202);
+  margin: 20px;
+  padding: 15px;
+  color: rgb(49, 18, 18);
+  width: 200px;
+  background: linear-gradient(to top left, red, blue);
+}

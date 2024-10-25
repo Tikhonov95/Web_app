@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style type="text/css">
+  body {
+    margin: 0 auto;
+    background-color: rgb(72, 189, 4);
+    }
+
+  #content-wrapper {
+    background: rgb(84, 236, 231);
+  }
+  </style>
+</head>
+<body>
+  <div id="content-wrapper">
+    <h1>Welcome to the home page</h1>
+    <p>This is my website</p>
+  
+    <p>
+      Hello, my name is Andrey.
+      I am <strong>tutor</strong>. <br/>
+      This is on the new line
+    </p>
+    <form action="/result" method="GET">
+      <label for="fullname">Имя: </label>
+      <input type="text" name="fullname" id="fullname"> <br/>
+      <br/>
+  
+      <label for="gender">Пол: </label>
+      <select name="gender" id="gender">
+        <option value="мужчина">Мужчина</option>
+        <option value="женщина">Женщина</option>
+      </select> <br/><br/>
+  
+      <label for="date_of_birth">Дата Рождения: </label> <br/>
+      <br/>
+      <input type="text" placeholder="формат dd.mm.yyyy" name="date_of_birth" id="date_of_birth"> <br/>
+      <br/>
+      
+      <input type="submit" value="Send">
+    </form>
+  </div>
+</body>
+</html>
